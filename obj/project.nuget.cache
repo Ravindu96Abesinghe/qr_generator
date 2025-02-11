@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YCtITYAfRss=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ravin\\source\\repos\\QRCodeGeneratorHelper\\QRCodeGeneratorHelper\\QRCodeGeneratorHelper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ravin\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
