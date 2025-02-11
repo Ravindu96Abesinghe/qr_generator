@@ -12,13 +12,9 @@
             <textarea name="text" class="form-control mb-3" rows="5" placeholder="Enter text here"></textarea>
             <button type="submit" class="btn btn-primary">Generate</button>
         </form>
-
-        @if (QRCodeImageUrl != "")
-        {
             <div class="w-50 m-auto">
                 <img src="@QRCodeImageUrl" class="img-fluid w-100 h-100 mb-3" />
                 <a href="@QRCodeImageUrl" class="btn btn-primary w-100" download="QRCode.png">Download</a>
-            </div>
-        }        
+            </div>      
     </div>
 </div>

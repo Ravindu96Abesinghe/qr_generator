@@ -10,11 +10,13 @@ namespace QRCodeGeneratorHelper.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IQRCodeGeneratorHelper qRCodeGeneratorHelper;
+        private readonly QRGenerateLibrary.QRCode Qrcode;
 
         public HomeController(ILogger<HomeController> logger, IQRCodeGeneratorHelper qRCodeGeneratorHelper)
         {
             _logger = logger;
             this.qRCodeGeneratorHelper = qRCodeGeneratorHelper;
+            this.Qrcode = new QRGenerateLibrary.QRCode();
         }
 
         public IActionResult Index()
@@ -25,22 +27,27 @@ namespace QRCodeGeneratorHelper.Controllers
         [HttpPost]
         public IActionResult Index(string text)
         {
-            if (string.IsNullOrEmpty(text))
-                return BadRequest();
 
-            if (!long.TryParse(text, out long number))
-                return BadRequest("Invalid input. Please enter a valid number.");
+            //if (!long.TryParse(text, out long number))
+            //    return BadRequest("Invalid input. Please enter a valid number.");
+            string baseUrl = "https://dev-eis-portal.mra.mw/api/api/v1/ReorderNotification/Validation";
+
 
             //long QRCodeAsBytes = QRGenerateLibrary.QRCode(number);
 
             //string QRCodeAsImageBase64 = $"data:image/png;base64,{Convert.ToBase64String(QRCodeAsBytes)}";
-
-            string QRCodeAsImageBase64 = QRGenerateLibrary.QRCode.Base10ToBase64(number);
-            string QRCodeAsImageBase64Image = $"data:image/png;base64,{QRCodeAsImageBase64}";
+            DateTime transactionDate = new DateTime(2025, 1, 5);
+            string filePath = "C:\\FileShare_Dil";
+            string newInvoice = Qrcode.GenerateInvoiceNumber(10,1, transactionDate, 1);
+            string QRcodeResult = Qrcode.GenerateQRCodeWithHmac(baseUrl, "K-B-JYwp-B", 2, 19600.00, 0, "JYwp", "90aa239950b887149d068ea32841c997d53d099", filePath);
+            Console.WriteLine(newInvoice);
+            //string QRCodeAsImageBase64 = QRGenerateLibrary.QRCode.Base10ToBase64(QRcodeResult);
+            //string QRCodeAsImageBase64Image = $"data:image/png;base64,{QRcodeResult}";
+            Console.WriteLine(QRcodeResult);    
 
             GenerateQRCodeViewModel model = new GenerateQRCodeViewModel
             {
-                QRCodeImageUrl = QRCodeAsImageBase64
+                QRCodeImageUrl = QRcodeResult
             };
 
             return View(model);

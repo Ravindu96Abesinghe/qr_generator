@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YCtITYAfRss=",
+  "dgSpecHash": "EpYZ8AhAHNY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ravin\\source\\repos\\QRCodeGeneratorHelper\\QRCodeGeneratorHelper\\QRCodeGeneratorHelper.csproj",
+  "projectFilePath": "C:\\Users\\Dell\\Documents\\Dilsha\\Practical\\qr_generator\\QRCodeGeneratorHelper.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ravin\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512"
+    "C:\\Users\\Dell\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512"
   ],
   "logs": []
 }

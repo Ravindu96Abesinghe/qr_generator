@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Reference Include="QRGenerateLibrary">
-      <HintPath>..\..\..\..\Downloads\2025-02-07(MRAFS_testing)\New_library_2025_01_30\QRGenerateLibrary.dll</HintPath>
+      <HintPath>..\QRGenerateLibrary\QRGenerateLibrary\bin\Debug\QRGenerateLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
 
